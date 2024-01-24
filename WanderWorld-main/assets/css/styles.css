@@ -1,0 +1,975 @@
+@import url("https://fonts.googleapis.com/css2?family=Gluten&family=Open+Sans&family=Roboto:wght@400;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Gluten", cursive;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/backgroundRepeat.jpg");
+  background-repeat: repeat;
+  background-position: center center;
+  z-index: -1;
+}
+
+.container,
+.cont-feed {
+  z-index: 5;
+}
+
+.overlay {
+  background-color: rgba(255, 255, 255, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);
+}
+
+.cont-login {
+  z-index: 5;
+  height: 70%;
+  width: 300px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid #009688;
+  border-radius: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Sombra suave */
+}
+
+.box-login {
+  text-align: center;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  max-width: 400px; /* Limita el ancho máximo del formulario */
+  margin: 0 auto; /* Centra el formulario horizontalmente */
+  padding: 20px; /* Agrega un espacio interno para el contenido del formulario */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0; /* Espacio entre los elementos del formulario */
+}
+
+.input-login {
+  margin: 10px 0px;
+  border: 1px solid #ccc; /* Bordes suaves */
+  font-size: 16px;
+  border-radius: 5px;
+  outline: none;
+  width: 90%; /* Ocupa el ancho completo del contenedor */
+  height: 30px; /* Aumenta la altura para una mejor usabilidad */
+  padding: 5px 10px; /* Espaciado interno adicional para un mejor aspecto */
+}
+
+.input-login:focus {
+  border: 2px solid #0073e6; /* Cambia el borde cuando el campo está enfocado */
+  outline: none; /* Elimina el borde predeterminado del enfoque */
+}
+
+.btn-login {
+  width: 90%;
+  font-size: 22px;
+  background-color: #0073e6; /* Color de fondo azul */
+  color: #fff; /* Texto blanco */
+  border: none; /* Elimina el borde del botón */
+  border-radius: 5px;
+  padding: 10px 20px; /* Espaciado adicional en el botón */
+  font-weight: bold; /* Hace que el texto sea más audaz */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.btn-login:hover {
+  background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse */
+}
+
+.forgot-password,
+.register {
+  text-decoration: none;
+  color: #0073e6; /* Color de enlace azul */
+  margin: 0 10px; /* Agrega espacio entre los enlaces */
+  font-size: 16px;
+}
+
+.forgot-password:hover,
+.register:hover {
+  text-decoration: underline; /* Subraya el enlace al pasar el mouse por encima */
+}
+
+.form-control span {
+  margin: 0 5px; /* Agrega espacio entre el texto "o" y los enlaces */
+  color: #555; /* Color de texto gris */
+}
+
+/* Estilos generales para el header */
+header {
+   /* Azul turquesa o Azul del océano */
+  background-color: #28036a;
+  color: #fff;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+/* Estilos para el contenido del header */
+.header-content {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas más pequeñas */
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Limita el ancho del contenido del header */
+  margin: 0 auto; /* Centra el contenido horizontalmente */
+}
+
+/* Estilos para el logo */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos para el icono del logo */
+.logo-icon {
+  font-size: 36px; /* Tamaño del icono */
+  margin-right: 10px; /* Espacio entre el icono y el nombre de la red social */
+}
+
+/* Estilos para el nombre de la red social */
+.logo-text {
+  font-size: 24px; /* Tamaño del texto del nombre de la red social */
+  font-weight: bold; /* Hace que el texto sea más audaz */
+  color: #333; /* Color del texto (negro) */
+}
+
+/* Estilos para la navegación en el header */
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  text-align: right; /* Alinea la navegación a la derecha en pantallas más pequeñas */
+}
+
+.navigation ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.navigation ul li a {
+  text-decoration: none;
+  color: #e2e2e2;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+/* Estilos para el perfil de usuario */
+.user-profile {
+  display: flex;
+  align-items: center;
+  font-size: 18px; /* Tamaño de fuente para el nombre de usuario */
+  color: #333; /* Color del texto del nombre de usuario (negro) */
+}
+
+/* Estilos para el icono de usuario */
+.user-profile i {
+  font-size: 24px; /* Tamaño del icono de usuario */
+  margin-right: 10px; /* Espacio entre el icono y el nombre de usuario */
+  color: #ffffff; /* Color del icono de usuario (azul turquesa) */
+  transition: all 0.2s;
+}
+
+/* Estilos para el icono de cerrar sesión */
+.user-profile a {
+  text-decoration: none; /* Elimina la subrayado predeterminado del enlace */
+  font-size: 24px; /* Tamaño del icono de cerrar sesión */
+  margin-left: 10px; /* Espacio entre el nombre de usuario y el icono de cerrar sesión */
+}
+
+.user-profile a > i:hover {
+  color: rgb(255, 59, 59);
+}
+
+/* Cambia el color del enlace al pasar el cursor por encima */
+.navigation ul li a:hover {
+  color: #ffffff; /* Rosa coral */
+}
+
+/* Media query para pantallas más pequeñas (ejemplo: dispositivos móviles) */
+@media screen and (max-width: 768px) {
+  .header-content {
+    flex-direction: column; /* Cambia la dirección de los elementos a vertical */
+    align-items: flex-start; /* Alinea los elementos a la izquierda */
+  }
+
+  .navigation ul {
+    text-align: left; /* Alinea la navegación a la izquierda */
+  }
+
+  .logo img {
+    margin-right: 0; /* Elimina el margen entre el logo y la navegación */
+  }
+}
+
+/* Estilos generales para la publicación */
+.post {
+  background-color: #fff;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 600px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Estilos para la información del usuario */
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-info span {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Estilos para el contenido de la publicación */
+.post-content {
+  font-size: 18px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+/* Estilos para los iconos de acciones (like, comentarios, etc.) */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.actions i {
+  margin-right: 5px;
+  color: #555;
+}
+
+/* Estilos para la sección de comentarios */
+.comment-section {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.comment-section input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.comment-section button {
+  background-color: #0073e6;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.comment-section button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para los comentarios */
+.comments .comment {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.comments .comment img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.comments .comment span {
+  font-weight: bold;
+}
+
+.cont-feed {
+  position: relative;
+}
+
+.suggested-person {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #e1e1e1; /* Borde suave */
+  border-radius: 5px;
+  background-color: #fff; /* Fondo blanco */
+}
+
+.suggested-person img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.suggested-info {
+  flex: 1; /* Ocupa el espacio disponible */
+}
+
+.suggested-info p {
+  margin: 0;
+}
+
+.follow-button {
+  background-color: #0073e6;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.unfollow-button {
+  background-color: #e60000;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.unfollow-button:hover,
+.unfollow:hover {
+  background-color: #b30000;
+}
+
+.follow-button:hover {
+  background-color: #0056b3;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+  z-index: 5;
+  padding: 0px 10px;
+  margin: auto;
+  width: 80%;
+}
+
+.cont-feed {
+  width: 70%; /* Ajusta el tamaño según tus necesidades */
+  /* Resto de los estilos para los posts */
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+}
+
+.suggested-container {
+  width: 30%; /* Ajusta el tamaño según tus necesidades */
+  margin-top: 70px;
+  margin-right: 20px;
+  background-color: #f0f0f0; /* Color de fondo de la sección de sugerencias */
+  display: block;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.suggested-container > h2 {
+  text-align: center;
+}
+
+/* Estilos generales para la página de perfil */
+.profile {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  z-index: 5;
+  margin: auto;
+  width: 80%;
+}
+
+.profile-principal {
+  margin-top: 40px;
+  background-color: #d4d2d2;
+  border-radius: 10px;
+  margin-top: 70px;
+}
+
+/* Estilos para la sección de información del perfil */
+.profile-info {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff; /* Fondo blanco para resaltar la información del perfil */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border-radius: 10px 10px 0px 0px;
+  margin-bottom: 20px;
+}
+
+.profile-info img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover; /* Ajusta la imagen a la forma del círculo */
+  border: 4px solid #0073e6; /* Borde azul alrededor de la imagen */
+  margin-bottom: 15px;
+}
+
+.profile-info h1 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.profile-info p {
+  font-size: 16px;
+  color: #555; /* Color de texto gris */
+  margin: 5px 0;
+}
+
+.profile-info button {
+  background-color: #0073e6;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s; /* Transición suave en el cambio de color */
+}
+
+.profile-info button:hover {
+  background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse */
+}
+
+/* Estilos para la sección de seguidores y seguidos */
+.profile-followers {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.followers,
+.following {
+  margin: 0 20px;
+  text-align: center;
+}
+
+.followers h2,
+.following h2 {
+  font-size: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+ul li img {
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Estilos para la sección de seguidores y seguidos */
+.profile-followers {
+  display: flex;
+}
+
+.followers,
+.following {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+  background-color: #fff; /* Fondo blanco para resaltar la información */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border-radius: 10px;
+}
+
+.followers h2,
+.following h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.followers ul,
+.following ul {
+  list-style: none;
+  padding: 0;
+}
+
+.followers li,
+.following li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.followers li img,
+.following li img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.followers li span,
+.following li span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Estilos específicos para la lista de seguidores */
+.followers ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Estilos específicos para la lista de usuarios seguidos */
+.following ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Añadir margen a los elementos seguidos para mayor separación */
+.following li {
+  margin-right: 20px;
+}
+
+/* Añadir margen al último elemento de la fila para una mejor alineación */
+.following li:nth-child(3n) {
+  margin-right: 0;
+}
+
+/* Estilos para la sección de publicaciones */
+.profile-posts {
+  width: 80%;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  /* Agrega estilos para mostrar las publicaciones del usuario aquí */
+}
+
+/* Estilos para el botón que abre el modal */
+.open-modal {
+  background-color: #0073e6;
+  font-size: 24px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+  margin: 20px auto;
+  width: 85%;
+}
+
+/* Estilos para el modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* Estilos para el botón de cierre */
+.close-button {
+  background-color: #ff3333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.modal-content {
+  text-align: center;
+  margin: 20px;
+}
+
+.modal-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modal-content label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+}
+
+.modal-content button[type="submit"] {
+  background-color: #0073e6;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-right: 25px;
+}
+
+.modal-content .close-button {
+  background-color: #ff3333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 25px;
+  display: inline-block; /* Cambia de block a inline-block */
+}
+
+.modal-content textarea {
+  width: 90%;
+  height: 150px;
+  max-width: 500px; /* Ajusta el ancho máximo según tus preferencias */
+  padding: 10px;
+  max-height: 600px; /* Ajusta la altura máxima según tus preferencias */
+  resize: none; /* Evita que se pueda redimensionar el textarea manualmente */
+}
+
+.modal-content {
+  background-color: #fff;
+  overflow: auto;
+  width: 90%;
+  height: 70%;
+  max-width: 500px;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el formulario */
+form {
+  margin-top: 20px;
+}
+
+/* Estilos para cada grupo de formulario (label + input/textarea) */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group textarea,
+.form-group input[type="file"] {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+}
+
+.form-group textarea {
+  height: 150px; /* Altura ajustable según tus necesidades */
+}
+
+/* Estilos para el botón */
+#saveChangesBtn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0073e6; /* Color de fondo azul */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#saveChangesBtn:hover {
+  background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse */
+}
+
+.settings-container {
+  width: 80%;
+  margin: auto;
+  margin-top: 70px;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+}
+
+.form-group {
+  margin: 10px auto;
+  width: 100%;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 0px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+  width: 95%;
+  padding: 10px 15px;
+}
+
+select {
+  height: 40px;
+}
+
+.btn-submit-setting {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #0073e6;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-submit-setting:hover {
+  background-color: #0056b3;
+}
+
+.cont-explore {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 20px;
+  z-index: 5;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 80%;
+  height: 70%;
+  overflow: hidden; /* Evita que el contenido desborde */
+}
+
+.titulo-explore {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#buscador {
+  margin-bottom: 20px;
+}
+
+#buscador > input {
+  width: 80%;
+}
+
+#resultados {
+  width: 90%;
+  overflow-y: scroll;
+  max-height: calc(65%);
+  padding: 20px 15px;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+  ); /* Configuración del grid */
+  grid-gap: 20px;
+}
+
+#term {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.profile-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid #3498db;
+}
+
+.profile-name {
+  display: block;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.profile-followers {
+  font-size: 16px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.follow-button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.follow-button:hover {
+  background-color: #2980b9;
+}
+
+.comment {
+  justify-content: space-between;
+}
+
+.coment-cont {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.coment-cont-info {
+  display: flex;
+  align-items: center;
+}
+
+.post-content-container {
+  white-space: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+  height: auto;
+}
+
+.post-content {
+  margin-bottom: auto; /* Empujar el contenido hacia abajo */
+  white-space: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+  height: auto
+}
+
+.btn-del-com{
+  height: 100%;
+  background-color: red;
+  color: white;
+  padding: 5px;
+}
+
+
+.user-info{
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-info > form{
+  display: flex;
+  align-items: center;
+}
+
+.user-info > form > button {
+  height: 100%;
+  background-color: red;
+  color: white;
+  padding: 5px;
+}
+
+.user-info-primary{
+  display: flex;
+  align-items: center;
+}
